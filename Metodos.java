@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import javax.sound.sampled.SourceDataLine;
 
 public class Metodos {
     Scanner sc = new Scanner(System.in);
@@ -19,5 +20,15 @@ public class Metodos {
             }
         }
         return m;
+    }
+    public void mostrarMatriz(Producto[][] m) {
+        for (int i = 0; i < m.length; i++) {
+            for (int j = 0; j < m[i].length; j++) {
+                System.out.println("Nombre: " + m[i][j].getNombre());
+                System.out.println("Precio: " + m[i][j].getPrecio());
+                System.out.println("Cantidad: " + m[i][j].getCantidad());
+            }
+            System.out.println();
+        }
     }
 }
