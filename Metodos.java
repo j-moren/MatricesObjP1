@@ -31,4 +31,19 @@ public class Metodos {
             System.out.println();
         }
     }
+    public String MostrarposicionElemento(Producto[][] m) {
+        String nombreBuscar = "";
+        System.out.println("Ingrese el Producto a Buscar:");
+        nombreBuscar = sc.next();
+        String result = "";
+        for (int i = 0; i < m.length; i++) {
+            for (int j = 0; j < m[i].length; j++) {
+                if(m[i][j].getNombre().toLowerCase().equals(nombreBuscar)) {
+                    result += "El Producto se Encuentra en la Posición: " + (i + 1) + "," + (j + 1) + "\n";
+                
+                }
+            }
+        }
+        return result;
+    }
 }
