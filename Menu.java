@@ -10,7 +10,7 @@ public class Menu {
         dimension = sc.nextInt();
         System.out.println("Ingrese la opcion que desea realizar");
         opcion = sc.nextInt();
-        switch (opcion)
+        switch (opcion){
             case 1:
                 Punto1 objP1 = new Punto1();
                 objP1.P1(dimension);
