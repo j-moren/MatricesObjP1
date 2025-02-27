@@ -11,12 +11,12 @@ public class Metodos {
                 Producto o = new Producto();
                 System.out.println("Inrese el Nombre del Producto (en la posición ["+i+"]["+j+"]):");
                 sc.nextLine();// Limpia el Buffer
-                o.setNombre(sc.next());
+                o.setNombre(sc.nextLine());
                 System.out.println("Ingrese el Precio del Producto:");
                 o.setPrecio(sc.nextDouble());
                 System.out.println("Ingrese la Cantidad del Producto:");
                 o.setCantidad(sc.nextInt());
-                m [i][i] = o;
+                m [i][j] = o;
             }
         }
         return m;
@@ -36,14 +36,21 @@ public class Metodos {
         System.out.println("Ingrese el Producto a Buscar:");
         nombreBuscar = sc.next();
         String result = "";
+
+        boolean encontrado = false; // Variale para verificar si encontramos el producto
         for (int i = 0; i < m.length; i++) {
             for (int j = 0; j < m[i].length; j++) {
-                if(m[i][j].getNombre().toLowerCase().equals(nombreBuscar)) {
+                //Compara el nomre del producto, sin importar mayúsculas / minúsculas
+                if(m[i][j].getNombre().toLowerCase().equals(nombreBuscar.toLowerCase())){
                     result += "El Producto se Encuentra en la Posición: " + (i + 1) + "," + (j + 1) + "\n";
-                
+                    encontrado = true;
                 }
             }
         }
+        if (!encontrado) {
+            result = "Producto no encontrado";
+        }
         return result;
     }
+    
 }
